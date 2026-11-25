@@ -207,7 +207,7 @@ function place(x,y){ox=x;oy=y;orb.style.transform='translate('+(x-os/2)+'px,'+(y
   requestAnimationFrame(loop)})(0);
 
 /* lưu điều ước lên server (Cloudflare Worker -> ghi vào dieuuoc.txt trong repo GitHub) */
-var SAVE_URL='';  // <<< DÁN ĐỊA CHỈ WORKER VÀO ĐÂY, ví dụ https://wish.ten-ban.workers.dev
+var SAVE_URL='https://dieuuoc-save.datn923456.workers.dev';  // <<< DÁN ĐỊA CHỈ WORKER VÀO ĐÂY, ví dụ https://wish.ten-ban.workers.dev
 var sending=false;
 function post(w){return fetch(SAVE_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({wish:w}),keepalive:true}).then(function(r){if(!r.ok)throw 0})}
 function flushPending(){
